@@ -8,40 +8,43 @@ namespace LinkedListPracticeProblem
 {
     public class LinkedList
     {
-        public Node head;
-
+        Node head = null;
         public void Add(int data)
         {
             Node node = new Node(data);
-            if (this.head == null)
+            if (head == null)
             {
                 this.head = node;
+                Console.WriteLine(node.data + " Added Successfully");
             }
             else
             {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = node;
+                Node address = new Node(data);
+                Node h1 = null;
+                h1 = this.head;
+                this.head = address;
+                Node temp = address;
+                temp.next = h1;
+                Console.WriteLine(address.data + " Added Successfully");
             }
-            Console.WriteLine("{0} inserted into Linked List ", node.data);
         }
 
         public void Display()
         {
-            Node temp = this.head;
-            if (temp == null)
+            if (this.head == null)
             {
-                Console.WriteLine("Linked list is empty");
-                return;
+                Console.WriteLine("LinkedList Is Empty");
             }
-            while (temp != null)
+            else
             {
-                Console.WriteLine(temp.data + " ");
-                temp = temp.next;
+                Console.WriteLine("Values In LinkedList Are:");
+                while (this.head != null)
+                {
+                    Console.Write(this.head.data + " ");
+                    this.head = this.head.next;
+                }
             }
+
         }
     }
 }
