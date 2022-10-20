@@ -5,14 +5,16 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Linked List Program");
-
-            Console.WriteLine("problem : Ability to insert 30 between 56 and 70");
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine("Ability to delete the first element in the LinkedList of sequence 56->30->70 ");
             LinkedList list = new LinkedList();
             list.Add(56);
+            list.Add(30);
             list.Add(70);
+            Console.WriteLine("----  Before deleting  -----");
             list.Display();
-            Console.WriteLine("Inserting 30 Value Between 56 And 70:");
-            list.insertbetween(56, 30);
+            Console.WriteLine("--------  After deleting  ----------");
+            list.popfirst();
             list.Display();
         }
     }

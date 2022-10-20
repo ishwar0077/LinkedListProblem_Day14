@@ -27,19 +27,9 @@ namespace LinkedListPracticeProblem
             }
             Console.WriteLine(node.data + ":Added SuccessFully");
         }
-        public void insertbetween(int value, int data)
+        public void popfirst()
         {
-            Node node = head;
-            while (node.data != value)
-            {
-                node = node.next;
-            }
-            Node node1 = new Node(data);
-            Node temp;
-            temp = node.next;
-            node.next = node1;
-            node1.next = temp;
-
+            this.head = this.head.next;
         }
         public void Display()
         {
