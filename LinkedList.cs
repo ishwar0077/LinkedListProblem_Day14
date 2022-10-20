@@ -11,40 +11,41 @@ namespace LinkedListPracticeProblem
         Node head = null;
         public void Add(int data)
         {
-            Node node = new Node(data);
-            if (head == null)
-            {
-                this.head = node;
-                Console.WriteLine(node.data + " Added Successfully");
-            }
-            else
-            {
-                Node address = new Node(data);
-                Node h1 = null;
-                h1 = this.head;
-                this.head = address;
-                Node temp = address;
-                temp.next = h1;
-                Console.WriteLine(address.data + " Added Successfully");
-            }
-        }
-
-        public void Display()
-        {
-            if (this.head == null)
-            {
-                Console.WriteLine("LinkedList Is Empty");
-            }
-            else
-            {
-                Console.WriteLine("Values In LinkedList Are:");
-                while (this.head != null)
+                Node node = new Node(data);
+                if (this.head == null)
                 {
-                    Console.Write(this.head.data + " ");
-                    this.head = this.head.next;
+                    this.head = node;
                 }
-            }
-
+                else
+                {
+                    Node temp = head;
+                    while (temp.next != null)
+                    {
+                        temp = temp.next;
+                    }
+                    temp.next = node;
+                }
+                Console.WriteLine(node.data + ":Appended SuccessFully");
+           
         }
+            public void Display()
+            {
+                Node temp = this.head;
+                if (temp == null)
+                {
+                    Console.WriteLine("LinkedList Is Empty");
+                }
+                else
+                {
+                    Console.WriteLine("Values In LinkedList Are:");
+                    while (temp != null)
+                    {
+                        Console.Write(temp.data + " ");
+                        temp = temp.next;
+                    }
+                }
+
+            }
+        
     }
 }
